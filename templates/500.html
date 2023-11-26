@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h1>Server Error (500)</h1>
+    <p>Sorry, but something went wrong. Please check back later.</p>
+
+    {% if debug %}
+        <p><small>Debugging information: {{ debug }}</small></p>
+    {% endif %}
+{% endblock %}
