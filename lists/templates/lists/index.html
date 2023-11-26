@@ -1,0 +1,61 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}I want that{% endblock %}
+
+{% block content %}
+  
+    
+        
+<a class='btn btn-primary btn-lg button-header' href= "{% url 'add_to_wish_list' %}" >Add Item</a>
+      
+  <form method="get" action="{% url person|lower|add:'list' %}" class='text-center my-5' id='orderForm'>
+  <label for="order_by">Order by:</label>
+  <select name="order_by" id="order_by" onchange="submitForm()">
+      <option value="-id" {% if current_order_by == '-id' %}selected{% endif %}>Newest</option>
+      <option value="id" {% if current_order_by == 'id' %}selected{% endif %}>Oldest</option>
+      <option value="price" {% if current_order_by == 'price' %}selected{% endif %}>Price (Ascending)</option>
+      <option value="-price" {% if current_order_by == '-price' %}selected{% endif %}>Price (Descending)</option>
+  </select>
+</form>
+
+
+
+<div class="container">
+
+{% for item in listitems %}
+
+  <div class="card my-5 mx-2">
+    <h5 class="card-header d-flex justify-content-between align-items-center {{item.categories}}-bg" style="height: 60px;">
+      <span class="flex-grow-1">{{ item.title }} </span>
+      <span><i class="fa-solid fa-{{item.categories}}"></i></span>
+    </h5>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-xl-8">
+          <p class="card-text">{{item.description}}</p>
+          <p class="card-price">Price: €{{item.price}}</p>
+        </div>
+        <div class="col-xl-4 buttons d-flex align-items-center">
+          <a class='btn btn-primary {{item.categories}}-btn' href="{{item.url}}">Buy Me Now!</a>
+          <form method="post" action="{% url 'delete_wish_list_item' item.id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger delete">Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+<h5 class="text-center my-5">No more Items</h5>
+</div>
+
+
+
+<script>
+  function submitForm() {
+      document.getElementById("orderForm").submit();
+  }
+</script>
+    
+{% endblock %}

@@ -1,0 +1,105 @@
+:root {
+    --text: #090501;
+    --background: #fffdfa;
+    --primary: #79b3f1;
+    --secondary: #e1c8f9;
+    --accent: #1777de;
+  }
+ 
+  
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: var(--background);
+    font-family: 'Ubuntu', sans-serif;
+  }
+  /* Home Page */
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    height:100%
+
+   
+  }
+  
+  .button {
+    color:var(--background);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 5rem;
+    height: 23.5%;
+  }
+
+ 
+ 
+  .james{
+    background-color: var(--accent);
+  }
+  .james:hover{
+   background-color: #4777de;
+  }
+  .orla{
+    background-color: var(--secondary);
+  }
+  .orla:hover{
+    background-color: #f9c8f9;
+    
+   }
+
+  .jack{
+    background-color: var(--primary);
+  }
+  .jack:hover{
+    background-color: #777dee;
+    
+   }
+  .flat{
+    background-color: var(--text);
+  }
+  .flat:hover{
+    background-color: #200000;
+    
+   }
+  
+   
+  .card-text{
+    font-size: 1rem;
+  }
+  .card-price {
+    font-weight: bold;
+    font-size: 1rem;
+   
+  } 
+ 
+  .button-header{
+    display: flex;
+    margin: 2rem;
+    justify-content: center;
+  } 
+  .buttons{
+    display: flex;
+    justify-content: space-between;
+  }
+  .centered{
+    margin: 2rem;
+  
+  }
+
+.card-header{
+  background-color: var(--accent);
+  color: var(--background);
+}
+
+
+@media(min-width:500px){
+ .button-header{
+  max-width: 400px;
+  margin: auto;
+  margin-top: 2rem;
+
+ }
+}
+

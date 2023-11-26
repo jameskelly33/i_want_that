@@ -1,0 +1,152 @@
+:root {
+    --text: #090501;
+    --background: #fffdfa;
+    --primary: #79b3f1;
+    --secondary: #e1c8f9;
+    --accent: #1777de;
+  }
+ 
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: var(--background);
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .button {
+    color: #fff;
+    border: none;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0;
+    flex: 1;
+    cursor: pointer;
+    transition: background-color 0.8s; /* Smooth color transition */
+    transition: font-size 0.8s; /* Smooth color transition */
+  }
+  a{
+    font-size: 120px;
+  }
+  
+  /* Add additional styles as needed */
+  .james{
+    background-color: var(--accent);
+  }
+  .james:hover{
+   background-color: #4777de;
+  }
+  .orla{
+    background-color: var(--secondary);
+  }
+  .orla:hover{
+    background-color: #f9c8f9;
+    
+   }
+
+  .jack{
+    background-color: var(--primary);
+  }
+  .jack:hover{
+    background-color: #777dee;
+    /* font-size: 3.5em; */
+   }
+  .flat{
+    background-color: var(--text);
+  }
+  .flat:hover{
+    background-color: #200000;
+    /* font-size: 3.5em; */
+   }
+   .container {
+    display: flex;
+    justify-content: center;
+   
+  }
+
+   .card {
+    width: 100%;
+    display: flex;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    margin:2rem;
+
+  }
+
+  .card-content {
+    flex: 1;
+    /* padding: 40px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--background)
+  }
+  .card-header{
+    background-color: var(--accent);
+  }
+  .card-title {
+    font-size: 4rem;
+    margin: 0;
+    /* border-bottom:2px solid, var(--secondary); */
+    margin: 1.5rem;
+    color: var(--background);
+    
+  }
+  
+  .card-description {
+    margin: 40px 0;
+    padding: 40px;
+    font-size: 3rem;
+    padding-left: 40px;
+  }
+  
+  .card-price {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 3rem;
+    padding-left: 40px;
+   
+  }
+
+  .bootstrap-btn {
+    font-weight: 400;
+    text-align: center;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 2.5rem;
+    line-height: 1.5;
+    border-radius: .5rem;
+    color: var(--background);
+    background-color:var(--accent);
+    width: 50%;
+    text-decoration: none;
+    margin: 40px;
+   
+  }
+  
+  
+  .bootstrap-btn:hover{
+      background-color: var(--primary);
+  
+  }
+  .button-header{
+    display: flex;
+    margin: 2rem;
+    justify-content: center;
+  }
+
+  .centered{
+    margin: 2rem;
+  
+  }

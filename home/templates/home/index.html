@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}I want that{% endblock %}
+
+{% block content %}
+
+<div class="button-container">
+    <a href='{% url 'jameslist' %}'class="james button">James</a>
+    <a href='{% url 'orlalist' %}' class="orla button">Órfhlaith</a>
+    <a href='{% url 'jacklist' %}' class="jack button">Jack</a>
+    <a href='{% url 'flatlist' %}' class="flat button">Flat</a>
+</div>
+
+
+    
+{% endblock %}
