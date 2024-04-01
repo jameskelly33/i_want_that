@@ -76,8 +76,7 @@ def add_to_wish_list(request):
         if form.is_valid():
             item = form.save(commit=False)
             item.save()
-            print(request.user)
-            print(item)
+            send_wishlist_email(request.user, item)
             
 
 
