@@ -61,14 +61,7 @@ def flatlist(request):
 
 
 
-def send_wishlist_email(user, item):
-    subject = 'I WANT THAT!'
-    html_message = render_to_string('email_template.html', {'user': user, 'item': item})
-    plain_message = strip_tags(html_message)
-    from_email = 'jameskelly33@gmail.com'  # Update with your email
-    to_email = [user.email]
-    send_mail(subject, plain_message, from_email, to_email, html_message=html_message)
-    print('Sent!')
+
 
 @login_required
 def add_to_wish_list(request):
@@ -77,9 +70,6 @@ def add_to_wish_list(request):
         if form.is_valid():
             item = form.save(commit=False)
             item.save()
-            
-            send_wishlist_email(request.user, item)
-            
 
 
          

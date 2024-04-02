@@ -7,11 +7,3 @@ def home(request):
 
 
 
-
-send_mail(
-    "Subject here",
-    "Here is the message.",
-    "jameskelly33@gmail.com",
-    ["jameskelly33@gmail.com"],
-    fail_silently=False,
-)
