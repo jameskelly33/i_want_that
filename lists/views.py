@@ -70,8 +70,14 @@ def add_to_wish_list(request):
         if form.is_valid():
             item = form.save(commit=False)
             item.save()
-
-
+            send_mail(
+            "New added item to the wisho",
+    "WIsh me a wish.",
+    "jameskelly33@gmail.com",
+    ["jameskelly33@gmail.com"],
+    fail_silently=False,
+    )
+             
          
 
             return redirect('home')
