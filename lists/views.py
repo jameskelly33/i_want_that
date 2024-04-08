@@ -74,7 +74,7 @@ def add_to_wish_list(request):
             "New Item added to wish List",
             "Wish me a wish.",
             settings.EMAIL_HOST_USER,
-            [settings.EMAIL_SECONDARY_HOST_USER],
+            [settings.EMAIL_SECONDARY_USER],
             fail_silently=False,
             )
              
