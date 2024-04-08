@@ -71,12 +71,12 @@ def add_to_wish_list(request):
             item = form.save(commit=False)
             item.save()
             send_mail(
-            "New added item to the wisho",
-    "WIsh me a wish.",
-    "jameskelly33@gmail.com",
-    ["jameskelly33@gmail.com"],
-    fail_silently=False,
-    )
+            "New Item added to wish List",
+            "Wish me a wish.",
+            settings.EMAIL_HOST_USER,
+            [settings.EMAIL_SECONDARY_HOST_USER],
+            fail_silently=False,
+            )
              
          
 
