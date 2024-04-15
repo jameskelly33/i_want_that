@@ -70,13 +70,28 @@ def add_to_wish_list(request):
         if form.is_valid():
             item = form.save(commit=False)
             item.save()
-            send_mail(
-            "New Item added to wish List",
-            "Wish me a wish.",
-            settings.EMAIL_HOST_USER,
-            [settings.EMAIL_SECONDARY_USER],
-            fail_silently=False,
-            )
+            user_email=request.user.email
+            username= request.user.username
+            print(user_email)
+            print(username)
+            
+            if user_email==settings.EMAIL_HOST_USER:
+                send_mail(
+                "New Item added to wish List",
+                "Wish me a wish.",
+                settings.EMAIL_HOST_USER,
+                [settings.EMAIL_SECONDARY_USER],
+                fail_silently=False,
+                )
+            else:
+                send_mail(
+                "New Item added to wish List",
+                "Wish me a wish.",
+                settings.EMAIL_HOST_USER,
+                [settings.EMAIL_HOST_USER],
+                fail_silently=False,
+                )
+                    
              
          
 
