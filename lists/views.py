@@ -72,21 +72,20 @@ def add_to_wish_list(request):
             item.save()
             user_email=request.user.email
             username= request.user.username
-            print(user_email)
-            print(username)
+            item_url= item.url
             
             if user_email==settings.EMAIL_HOST_USER:
                 send_mail(
-                "New Item added to wish List",
-                "Wish me a wish.",
+                f"{username} added something to their Wish List",
+                f"I wished a wish,see what it is---- {item_url}",
                 settings.EMAIL_HOST_USER,
                 [settings.EMAIL_SECONDARY_USER],
                 fail_silently=False,
                 )
             else:
                 send_mail(
-                "New Item added to wish List",
-                "Wish me a wish.",
+                f"{username} added something to their Wish List",
+                f"I wished a wish,see what it is---- {item_url}",
                 settings.EMAIL_HOST_USER,
                 [settings.EMAIL_HOST_USER],
                 fail_silently=False,
